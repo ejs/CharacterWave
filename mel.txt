@@ -1,0 +1,44 @@
+Name: Melba Brandon
+Name Mel
+name Beuque
+
+Attributes
+Mental
+* Int 2
+* Wits 2
+* Resolve 2
+
+Physical
+# Str 2
+# Dex 3
+# Sta 3
+
+Social
+Pres 2
+Man 2
+Comp 3
+
+Skills
+
+Mental
+ Academics 1
+    Craft : 1
+Investigation 1
+Medicine 1
+
+Physical
+Athletics 1
+Brawl 1
+Drive 1
+Firearms 1
+Larceny 1
+Stealth 1
+Survival 1
+
+Social
+Empathy 3
+Expression 2
+Persuasion 2
+Socialize 2
+Streetwise 1
+Subterfuge 1

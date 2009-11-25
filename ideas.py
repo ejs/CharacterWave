@@ -16,15 +16,15 @@ class World(object):
         return len(seen)
 
     def __getitem__(self, key):
-        return self.store[key]
+        return self.store[key.lower()]
     
     def __contains__(self, item):
-        return item in self.store
+        return item.lower() in self.store
 
     def load(self, source):
         char = Character(source, self.defaults, self.filters)
         for n in char['name']:
-            self.store[n] = char
+            self.store[n.lower()] = char
 
 
 class Character(DictMixin):
@@ -40,8 +40,6 @@ class Character(DictMixin):
                 for m in self.methods:
                     if m(self, line):
                         break
-                else:
-                    print line.strip()
 
     def _catch_blank(self, line):
         return not line.strip()
@@ -71,6 +69,9 @@ class Character(DictMixin):
         return i
     
     methods = [_catch_blank, _catch_name, _catch_int_stat, _catch_stat]
+
+    def __len__(self):
+        return len(self.store)
 
     def __contains__(self, item):
         return item in self.store or item in self.defaults

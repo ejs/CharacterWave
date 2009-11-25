@@ -35,11 +35,10 @@ class Character(DictMixin):
         self.filters = filters or []
         self.store = {}
         self.defaults = defaults or {}
-        methods = (self._catch_blank, self._catch_name, self._catch_int_stat, self._catch_stat)
         for line in source:
             if line.strip():
-                for m in methods:
-                    if m(line):
+                for m in self.methods:
+                    if m(self, line):
                         break
                 else:
                     print line.strip()
@@ -71,6 +70,8 @@ class Character(DictMixin):
             self[i.group(1)] = i.group(2).strip()
         return i
     
+    methods = [_catch_blank, _catch_name, _catch_int_stat, _catch_stat]
+
     def __contains__(self, item):
         return item in self.store or item in self.defaults
 

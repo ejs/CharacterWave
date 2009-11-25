@@ -8,13 +8,22 @@ def filter(self, rep, key):
     if key == "defence":
         return min(self['dex'], self['wits'])
     if type(rep) == str:
-        items = rep.split()
-        if all(i in self for i in items):
-            return sum(self[s] for s in items)
-        else:
+        print 'str'
+        try:
+            return sum((self[i] if i in self else int(i)) for i in rep.split())
+        except Exception, e:
+            print e
             return rep
     else:
         return rep
+
+
+def test_example_filter():
+    assert filter({'dex':2, 'wits':3}, 0, 'defence') == 2
+    assert filter({}, 3, 'pie') == 3
+    assert filter({'dex':2, 'str':2}, 'dex str', 'speed') == 4
+    assert filter({'dex':2, 'str':2}, 'dex str 5', 'speed') == 9
+    assert filter({'dex':2, 'str':2}, 'dex str -3', 'speed') == 1
 
 
 def test_character():

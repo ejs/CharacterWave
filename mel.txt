@@ -26,15 +26,18 @@ Attributes
 Skills
   Mental
     Academics 1
+     # buisness 1
     Craft : 1
     Investigation 1
     Medicine 1
   
   Physical
     Athletics 1
+     # LongDistanceRunning 1
     Brawl 1
     Drive 1
     Firearms 1
+     # Pistol 1
     Larceny 1
     Stealth 1
     Survival 1
@@ -45,10 +48,11 @@ Skills
     Persuasion 2
     Socialize 2
     Streetwise 1
+     # organisedcrime 1
     Subterfuge 1
 
 Gear
-  pistol 2
+  lightpistol 2
 
-attack : dex firearms pistol
+attack : dex firearms pistol lightpistol
 meleeattack: str brawl

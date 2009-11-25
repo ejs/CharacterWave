@@ -20,4 +20,6 @@ if __name__ == '__main__':
     world = ideas.World(defaults, [filter])
     world.load(open('mel.txt'))
     a = sys.argv[1]
-    print sum(world['mel'][i] for i in a.split())
+    for section in a.split():
+        print "%s(%i)"%(section, world['mel'][section]),
+    print " = [%i]"%sum(world['mel'][i] for i in a.split())

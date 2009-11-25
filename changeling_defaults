@@ -1,0 +1,32 @@
+Academics -3
+Computer -3
+Crafts -3
+Investigation -3
+Medicine -3
+Occult -3
+Politics -3
+Science -3
+Athletics -1
+Brawl -1
+Drive -1
+Firearms -1
+Larceny -1
+Stealth -1
+Survival -1
+Weaponry -1
+Animal Ken -1
+Empathy -1
+Expression -1
+Intimidation -1
+Persuasion -1
+Socialize -1
+Streetwise -1
+Subterrfuge -1
+
+size 5
+health: size sta
+initiative: dex comp
+speed: str dex 5
+
+craft: crafts
+init: initiative

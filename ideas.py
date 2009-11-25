@@ -56,7 +56,7 @@ class Character(DictMixin):
 
     def _catch_int_stat(self, line):
         if 'intstat' not in self.expressions:
-            self.expressions['intstat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)[\s:;-]*(\d+)", re.I)
+            self.expressions['intstat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)[\s:;-]*?(-?\d+)", re.I)
         i = self.expressions['intstat'].match(line)
         if i:
             self[i.group(1)] = int(i.group(2).strip())

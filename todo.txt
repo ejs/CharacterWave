@@ -1,0 +1,7 @@
+Create full WoD setup
+Handle tally based stats (both before and after)
+Take an input line and output a compleated version with roll
+Take and ignore a already compleated output line
+Attempt fuller game system
+Integrate with google wave
+Handle multiple names for the same things (Craft v. Crafts)

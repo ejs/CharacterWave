@@ -62,9 +62,6 @@ class Character(DictMixin):
             self[i.group(1)] = int(i.group(2).strip())
         return i
 
-    def __contains__(self, item):
-        return item in self.store or item in self.defaults
-
     def _catch_stat(self, line):
         if 'stat' not in self.expressions:
             self.expressions['stat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)\s*:*\s*([\d\s\w\(\)]+)", re.I)
@@ -73,6 +70,9 @@ class Character(DictMixin):
             self[i.group(1)] = i.group(2).strip()
         return i
     
+    def __contains__(self, item):
+        return item in self.store or item in self.defaults
+
     def __setitem__(self, key, value):
         self.store[key.strip().lower()] = value
 

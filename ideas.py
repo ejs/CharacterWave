@@ -88,5 +88,5 @@ class Character(DictMixin):
         else:
             return 0
         for f in self.filters:
-            value = f(self, value)
+            value = f(self, value, key)
         return value

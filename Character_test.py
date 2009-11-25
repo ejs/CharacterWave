@@ -4,7 +4,9 @@ import ideas
 defaults = {'academics': -3, 'computer': -3, 'init':'dex comp'}
 
 
-def filter(self, rep):
+def filter(self, rep, key):
+    if key == "defence":
+        return min(self['dex'], self['wits'])
     if type(rep) == str:
         items = rep.split()
         if all(i in self for i in items):
@@ -64,6 +66,7 @@ def test_filter():
     assert char['int'] == 2
     assert char['attack'] == 6
     assert char['init'] == 6
+    assert char['defence'] == 2
 
 
 def test_world_filters():

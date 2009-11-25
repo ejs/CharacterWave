@@ -29,6 +29,7 @@ class World(object):
 
 class Character(DictMixin):
     expressions = {}
+    fallbackvalue = 0
 
     def __init__(self, source, defaults=None, filters=None):
         self.filters = filters or []
@@ -86,7 +87,7 @@ class Character(DictMixin):
         elif key in self.defaults:
             value = self.defaults[key]
         else:
-            return 0
+            value = self.fallbackvalue
         for f in self.filters:
             value = f(self, value, key)
         return value

@@ -49,7 +49,7 @@ class Character(DictMixin):
 
     def _catch_name(self, line):
         if 'name' not in self.expressions:
-            self.expressions['name'] = re.compile("^(?:name\s?)[\s:]*([\w\s]+)$", re.I)
+            self.expressions['name'] = re.compile("^(?:name\s?)[\s:;-]*([\w\s]+)$", re.I)
         i = self.expressions['name'].match(line)
         if i:
             self.store.setdefault('name', []).append(i.group(1).strip())
@@ -57,7 +57,7 @@ class Character(DictMixin):
 
     def _catch_int_stat(self, line):
         if 'intstat' not in self.expressions:
-            self.expressions['intstat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)\s*:*\s*(\d+)", re.I)
+            self.expressions['intstat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)[\s:;-]*(\d+)", re.I)
         i = self.expressions['intstat'].match(line)
         if i:
             self[i.group(1)] = int(i.group(2).strip())
@@ -65,7 +65,7 @@ class Character(DictMixin):
 
     def _catch_stat(self, line):
         if 'stat' not in self.expressions:
-            self.expressions['stat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)\s*:*\s*([\d\s\w\(\)]+)", re.I)
+            self.expressions['stat'] = re.compile("^[\s\*\#]*([\w\s\(\)]+)\s*[:;-][\s:;-]*([\d\s\w\(\)]+)", re.I)
         i = self.expressions['stat'].match(line)
         if i:
             self[i.group(1)] = i.group(2).strip()

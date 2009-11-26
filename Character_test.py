@@ -36,8 +36,9 @@ def test_character():
     assert char['Man'] == 2
     assert char['Academics'] == 1
     assert char['Craft'] == 1
-    assert char['attack'] == 'dex firearms pistol'
+    assert char['attack'] == 'dex firearms pistol lightpistol'
     assert char['Monky'] == 0
+    assert 'monky' not in char
 
 
 def test_world():
@@ -73,7 +74,7 @@ def test_filter():
     char = ideas.Character(open('mel.txt'), defaults, filters)
     assert char['computer'] == -3
     assert char['int'] == 2
-    assert char['attack'] == 6
+    assert char['attack'] == 7
     assert char['init'] == 6
     assert char['defence'] == 2
 
@@ -84,6 +85,6 @@ def test_world_filters():
     world.load(open('mel.txt'))
     char = world['Mel']
     assert char['int'] == 2
-    assert char['attack'] == 6
+    assert char['attack'] == 7
     assert char['computer'] == -3
     assert char['init'] == 6

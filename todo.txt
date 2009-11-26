@@ -1,6 +1,8 @@
 Create full WoD setup
+    damage type
+    9's again, 8's again, chance dice
+    avalability checks (for powers ect)
 Handle tally based stats (both before and after)
-Take an input line and output a compleated version with roll
 Take and ignore a already compleated output line
 Attempt fuller game system
 Integrate with google wave

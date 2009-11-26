@@ -36,10 +36,9 @@ class Character(DictMixin):
         self.store = {}
         self.defaults = defaults or {}
         for line in source:
-            if line.strip():
-                for m in self.methods:
-                    if m(self, line):
-                        break
+            for m in self.methods:
+                if m(self, line):
+                    break
 
     def _catch_blank(self, line):
         return not line.strip()
